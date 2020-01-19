@@ -1,11 +1,10 @@
 pipeline {
-  agent {
-    dockerfile true
-  }
-  stages {
-    stage('Compile static assets') {
+  agent any
+  
+stages {
+    stage('Compile') {
       steps {
-	echo 'Hello From JenkinsFile'
+	sh ‘man clean install’
        
       }
     }
