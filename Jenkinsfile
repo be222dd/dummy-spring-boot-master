@@ -1,24 +1,22 @@
 pipeline {
     agent any
-
+    tools { 
+        maven 'maven' 
+        jdk 'java-8-openjdk' 
+    }
     stages {
-        stage ('Compile Stage') {
-
+        stage ('Initialize') {
             steps {
-                sh 'mvn clean compile'
+                sh '''
+                    echo "PATH = ${/usr/lib/jvm/java-8-openjdk-amd64/}"
+                    echo "M2_HOME = ${/usr/share/maven/}"
+                ''' 
             }
         }
 
-        stage ('Testing Stage') {
-
+        stage ('Build') {
             steps {
-                sh 'mvn test’            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                sh 'mvn deploy’
+                echo 'This is a minimal pipeline.'
             }
         }
     }
