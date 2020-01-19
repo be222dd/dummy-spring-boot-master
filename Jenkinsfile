@@ -19,5 +19,17 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+	
+	stage ('Build') {
+            steps {
+                docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+
+        def customImage = docker.build(“./“)
+
+        /* Push the container to the custom Registry */
+        customImage.push()
+    }
+            }
+        }
     }
 }
