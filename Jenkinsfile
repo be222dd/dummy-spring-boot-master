@@ -23,7 +23,7 @@ pipeline {
 	    steps {
 		script{
 		docker.withRegistry('https://registry.hub.docker.com','dockerHub'){
-			def customImage = docker.build("myRepo/my-app")
+			def customImage = docker.build(".")
 			customImage.push()
 	}
         }
