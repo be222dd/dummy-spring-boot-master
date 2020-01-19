@@ -1,24 +1,23 @@
-pipeline {
+peline {
     agent any
     tools { 
         maven 'maven' 
-        jdk 'java-8-openjdk'
+        jdk 'java-8-openjdk' 
     }
     stages {
         stage ('Initialize') {
             steps {
                 sh '''
-                    echo “f”
-                    echo "M"
+                    echo "hello"
+                    echo "olsun artik"
                 ''' 
             }
         }
 
         stage ('Build') {
             steps {
-                sh ‘’’mvn clean install ''' 
+                sh 'mvn clean install'
             }
         }
     }
-}
-
+})
