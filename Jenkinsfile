@@ -5,18 +5,9 @@ pipeline {
         jdk 'java-8-openjdk' 
     }
     stages {
-        stage ('Initialize') {
+            stage ('Build') {
             steps {
-                sh '''
-                    echo "PATH = ${/usr/lib/jvm/java-8-openjdk-amd64/}"
-                    echo "M2_HOME = ${/usr/share/maven/}"
-                ''' 
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
+                sh ‘man clean install’
             }
         }
     }
