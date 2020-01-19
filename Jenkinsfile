@@ -1,4 +1,4 @@
-peline {
+pipeline {
     agent any
     tools { 
         maven 'maven' 
@@ -9,7 +9,7 @@ peline {
             steps {
                 sh '''
                     echo "hello"
-                    echo "olsun artik"
+                    echo "beys"
                 ''' 
             }
         }
@@ -20,4 +20,4 @@ peline {
             }
         }
     }
-})
+}
