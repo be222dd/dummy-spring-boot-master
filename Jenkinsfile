@@ -26,7 +26,7 @@ pipeline {
 
         def customImage = docker.build(“./“)
 
-        /* Push the container to the custom Registry */
+        
         customImage.push()
     }
             }
