@@ -23,7 +23,7 @@ pipeline {
 	    steps {
 		script{
 		docker.withRegistry('https://registry.hub.docker.com','dockerHub'){
-			def customImage = docker.build("my-docker-image")
+			def customImage = docker.build("be222dd/docker-sprint-boot:my-docker-image")
 			customImage.push()
 	}
         }
